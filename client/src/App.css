@@ -2262,3 +2262,105 @@
     font-size: 1.6rem;
   }
 }
+
+
+
+/* Targeted button styling for New Game and Bingo Achievement modals */
+.new-game-actions .btn-new-game-shuffle,
+.new-game-actions .btn-new-game-confirm,
+.win-actions .btn-win-primary,
+.win-actions .btn-win-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  min-height: 44px;
+  padding: 0.75rem 1rem;
+  border: 1px solid transparent;
+  border-radius: var(--radius-md, 12px);
+  font: inherit;
+  font-weight: 700;
+  line-height: 1.35;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  transition:
+    background-color 160ms ease,
+    border-color 160ms ease,
+    color 160ms ease,
+    box-shadow 160ms ease,
+    transform 160ms ease;
+}
+
+.new-game-actions .btn-new-game-shuffle,
+.win-actions .btn-win-secondary {
+  color: var(--color-forest-dark);
+  background: var(--color-cream, #f7f0df);
+  border-color: var(--color-border, #d8c9a8);
+  box-shadow: 0 2px 0 rgb(65 48 25 / 8%);
+}
+
+.new-game-actions .btn-new-game-confirm,
+.win-actions .btn-win-primary {
+  color: var(--color-cream, #fff8e8);
+  background: var(--color-forest, #285b43);
+  border-color: var(--color-forest, #285b43);
+  box-shadow: 0 3px 0 rgb(24 55 39 / 18%);
+}
+
+.new-game-actions .btn-new-game-shuffle:hover,
+.win-actions .btn-win-secondary:hover {
+  background: var(--color-ochre-light, #f0dfb5);
+  border-color: var(--color-ochre, #b98935);
+}
+
+.new-game-actions .btn-new-game-confirm:hover,
+.win-actions .btn-win-primary:hover {
+  background: var(--color-forest-dark, #204632);
+  border-color: var(--color-forest-dark, #204632);
+}
+
+.new-game-actions .btn-new-game-shuffle:active,
+.new-game-actions .btn-new-game-confirm:active,
+.win-actions .btn-win-primary:active,
+.win-actions .btn-win-secondary:active {
+  transform: translateY(1px);
+  box-shadow: none;
+}
+
+.new-game-actions .btn-new-game-shuffle:focus-visible,
+.new-game-actions .btn-new-game-confirm:focus-visible,
+.win-actions .btn-win-primary:focus-visible,
+.win-actions .btn-win-secondary:focus-visible {
+  outline: 3px solid var(--color-ochre, #b98935);
+  outline-offset: 3px;
+}
+
+.new-game-actions .btn-new-game-shuffle:disabled,
+.new-game-actions .btn-new-game-confirm:disabled,
+.win-actions .btn-win-primary:disabled,
+.win-actions .btn-win-secondary:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.win-actions .btn-win-primary,
+.win-actions .btn-win-secondary {
+  width: 100%;
+}
+
+@media (max-width: 480px) {
+  .new-game-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .new-game-actions .btn-new-game-shuffle,
+  .new-game-actions .btn-new-game-confirm {
+    width: 100%;
+  }
+}

@@ -111,7 +111,7 @@ export default function WinModal({
           <button 
             ref={primaryBtnRef}
             type="button" 
-            className="btn-journal"
+            className="btn-journal btn-win-primary"
             onClick={onKeepExploring}
           >
             <span>Keep Exploring (Seek More Lines)</span>
@@ -120,7 +120,7 @@ export default function WinModal({
 
           <button 
             type="button" 
-            className="btn-journal-secondary"
+            className="btn-journal-secondary btn-win-secondary"
             onClick={onNewGame}
           >
             <RotateCcw size={15} aria-hidden="true" />

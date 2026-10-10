@@ -103,7 +103,7 @@ export default function NewGameModal({
           {canShuffle && (
             <button
               type="button"
-              className="btn-journal-secondary"
+              className="btn-journal-secondary btn-new-game-shuffle"
               onClick={onShuffle}
               title="Rearrange cell positions while keeping completed challenges"
             >
@@ -114,8 +114,7 @@ export default function NewGameModal({
 
           <button
             type="button"
-            className="btn-journal"
-            style={{ background: 'var(--color-ochre)' }}
+            className="btn-journal btn-new-game-confirm"
             onClick={onConfirmNewGame}
           >
             <RotateCcw size={15} aria-hidden="true" />
