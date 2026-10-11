@@ -27,6 +27,10 @@ import { checkWin, shuffleBoard, SESSION_DURATION_SECONDS, formatTime } from './
 import { createEvidenceRecord, canMarkComplete } from './utils/evidenceLogic';
 import './App.css';
 
+const API_BASE_URL = (import.meta.env.VITE_API_BASE_URL || '').replace(/\/+$/, '');
+
+const apiUrl = (path) => `${API_BASE_URL}${path}`;
+
 /**
  * Game State Machine:
  *  'welcome'  — App just opened. Welcome screen shown. No generation yet.
@@ -96,7 +100,7 @@ export default function App() {
     const timeoutId = setTimeout(() => controller.abort(), 25000);
 
     try {
-      const response = await fetch('/api/challenges/generate', {
+      const response = await fetch(apiUrl('/api/challenges/generate'), {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ forceFallback, timeoutMs: 20000 }),
@@ -150,7 +154,7 @@ export default function App() {
 
   // Fetch health data once on mount (does NOT trigger challenge generation)
   useEffect(() => {
-    fetch('/api/health')
+    fetch(apiUrl('/api/health'))
       .then(res => res.json())
       .then(data => setHealthData(data))
       .catch(() => {});
